@@ -38,16 +38,24 @@ def sobre_salesforce():
 
         if op == '1':
             print('\n>>>>> O que é Salesforce? <<<<<')
-            print('blablabla')
-            print('------------------------------------')
+            print('A Salesforce é uma empresa de softwares que foca na solução de'
+                  '\ngerenciamento de relacionamento para aproximar empresas e pessoas.'
+                  '\nÉ uma plataforma de CRM integrada que oferece a todos os departamentos'
+                  '\numa visão única e compartilhada de cada cliente.')
         elif op == '2':
             print('\n>>>>> O que faz Salesforce? <<<<<')
-            print('blablabla')
-            print('------------------------------------')
+            print('Utilizando o Salesforce Customer 360, nossa plataforma de CRM integrada,'
+                  '\nsua empresa oferece experiências personalizadas para seus clientes.'
+                  '\nNossa solução fornece produtos poderosos e conectados para melhorar seu'
+                  '\nmarketing, vendas, commerce, atendimento aocliente, TI e muito mais.')
+
         elif op == '3':
             print('\n>>>>> Por que usar Salesforce? <<<<<')
-            print('blablabla')
-            print('------------------------------------')
+            print('- Atraia mais compradores com uma estratégia de marketing personalizada')
+            print('- Conquiste mais clientes conhecendo suas necessidades e preocupações')
+            print('- Atenda às expectativas dos seus clientes oferecendo experiências incríveis de compra')
+            print('- Responda rapidamente aos problemas de suporte ao cliente em qualquer canal')
+            print('- Automatize tarefas demoradas criando aplicativos personalizados')
 
         elif op == '4':
             break
