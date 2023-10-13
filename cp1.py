@@ -65,14 +65,21 @@ def sobre_salesforce():
 
 def sobre_crm():
     while True:
-        print('Submenu 2:')
-        print('1. Opção 1')
-        print('2. Voltar ao menu principal')
+        print('\n>>>>> SOBRE CRM <<<<<')
+
+        print(' [1] O que é CRM?')
+        print(' [2] O que faz Salesforce?')
+        print(' [3] Por que usar Salesforce?')
+        print(' [4] Voltar ao menu principal')
+        print('------------------------------')
+
+        op = input(' Escolha uma opção: ')
 
         op = input('Escolha uma opção: ')
 
         if op == '1':
             print('Executando a opção 1 do Submenu 2.')
+            print('CRM é a sigla usada para Customer Relationship Management e se refere ao conjunto de práticas, estratégias de negócio e tecnologias focadas no relacionamento com o cliente.')
         elif op == '2':
             break
         else:
