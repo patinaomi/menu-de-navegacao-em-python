@@ -1,78 +1,74 @@
-# cores
-reset = '\033[0m'
-black = '\033[30m'
-red = '\033[31m'
-green = '\033[32m'
-yellow = '\033[33m'
-blue = '\033[34m'
-magenta = '\033[35m'
-cyan = '\033[36m'
-
-
-def exibir_menu_principal():
-    print(f'===== Bem-vindo a {blue}Salesforce{reset} ====')
-    print(f'[{yellow}1{reset}] Página Inicial')
-    print(f'[{yellow}2{reset}] Sobre a Salesforce')
-    print(f'[{yellow}3{reset}] O que é CRM')
-    print(f'[{yellow}4{reset}] Serviços')
-    print(f'[{yellow}5{reset}] Formulário de Contato')
-    print(f'[{yellow}0{reset}] Sair do Site')
-    print('=================================')
-
-
-def pagina_inicial():
-    print('Você está na Página Inicial.')
-
-
-def sobre_nos():
-    print(f'===== {blue}O que é a Salesforce?{reset} =====')
-    print('Salesforce é uma empresa de tecnologia de software que é mais conhecida por sua plataforma de\n'
-          'gerenciamento de relacionamento com o cliente (CRM), chamada Salesforce CRM. O Salesforce CRM é uma\n'
-          'plataforma baseada em nuvem que ajuda as empresas a gerenciar e automatizar várias atividades\n'
-          'relacionadas a vendas, marketing, atendimento ao cliente e análise de dados. Ele é projetado para\n'
-          'ajudar as empresas a melhorar o envolvimento do cliente, aumentar as vendas e melhorar a eficiência'
-          'operacional.')
-
-    retornar_menu_principal()
-
-
-def produtos():
-    print('Veja nossos produtos.')
-
-
-def contato():
-    print('Entre em contato conosco.')
-
-
-def sair_programa():
-    print('Encerrando o programa...')
-
-
-def retornar_menu_principal():
+def menu_principal():
     while True:
-        op = int(input('Digite 1 para retornar ao menu ou 0 para sair do site: '))
-        if op == 1:
-            exibir_menu_principal()
+        print('====== SALESFORCE ======')
+        print(' [1] Sobre a Salesforce')
+        print(' [2] Sobre CRM')
+        print(' [3] Produtos Oferecidos')
+        print(' [4] Assine a Newsletter')
+        print(' [5] Entre em Contato')
+        print(' [6] Sair do Site')
+        print('========================')
+
+        op = input(' Digite uma opção: ')
+
+        if op == '1':
+            sobre_salesforce()
+        elif op == '2':
+            sobre_crm()
+        elif op == '3':
+            sobre_produtos()
+        elif op == '6':
+            print('\nObrigado por visitar nosso site!')
             break
         else:
-            sair_programa()
+            print('Opção inválida. Tente novamente.')
+
+
+def sobre_salesforce():
+    while True:
+        print('\n>>>>> SOBRE A SALESFORCE <<<<<')
+
+        print(' [1] O que é Salesforce?')
+        print(' [2] O que faz Salesforce?')
+        print(' [3] Por que usar Salesforce?')
+        print(' [4] Voltar ao menu principal')
+        print('------------------------------')
+
+        op = input(' Escolha uma opção: ')
+
+        if op == '1':
+            print('\n>>>>> O que é Salesforce? <<<<<')
+            print('blablabla')
+            print('------------------------------------')
+        elif op == '2':
+            print('\n>>>>> O que faz Salesforce? <<<<<')
+            print('blablabla')
+            print('------------------------------------')
+        elif op == '3':
+            print('\n>>>>> Por que usar Salesforce? <<<<<')
+            print('blablabla')
+            print('------------------------------------')
+
+        elif op == '4':
             break
+        else:
+            print(' Opção inválida. Digite novamente.')
 
 
-while True:
-    exibir_menu_principal()
-    escolha = input("Digite uma opção: ")
+def sobre_crm():
+    while True:
+        print('Submenu 2:')
+        print('1. Opção 1')
+        print('2. Voltar ao menu principal')
 
-    if escolha == "1":
-        pagina_inicial()
-    elif escolha == "2":
-        sobre_nos()
-    elif escolha == "3":
-        produtos()
-    elif escolha == "4":
-        contato()
-    elif escolha == "0":
-        print(f'Obrigado por visitar o nosso site.')
-        break
-    else:
-        print(f'{red}Opção inválida. Por favor, escolha novamente.{reset}')
+        op = input('Escolha uma opção: ')
+
+        if op == '1':
+            print('Executando a opção 1 do Submenu 2.')
+        elif op == '2':
+            break
+        else:
+            print('Opção inválida. Tente novamente.')
+
+
+menu_principal()
