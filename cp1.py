@@ -1,3 +1,6 @@
+import json
+
+
 def menu_principal():
     while True:
         print('====== SALESFORCE ======')
@@ -242,6 +245,15 @@ def assinar_newsletter():
     email = input('Digite seu e-mail: ')
 
     if validar_email(email) and validar_nome(nome):
+        with open('contatos-newsletter.json', 'r') as arquivo:
+            dados = json.load(arquivo)
+
+            ctt_newsletter = {'nome': nome, 'email': email}
+            dados.append(ctt_newsletter)
+
+            with open('contatos-newsletter.json', 'w') as arquivo:
+                json.dump(dados, arquivo, indent=4)
+
         print(f'\nOlá {nome.capitalize()}, a newsletter será enviada com sucesso para o e-mail {email.lower()}\n')
 
     else:
@@ -255,8 +267,18 @@ def cadastro_contato():
     nome = input('Digite seu nome: ')
     email = input('Digite seu e-mail: ')
     telefone = input('Digite seu telefone (somente números): ')
+    empresa = input('Digite o nome da sua empresa: ')
 
     if validar_email(email) and validar_nome(nome) and validar_telefone(telefone):
+        with open('contatos-formulario.json', 'r') as arquivo:
+            dados = json.load(arquivo)
+
+            ctt_formulario = {"nome": nome, "email": email, 'telefone': telefone, 'empresa': empresa}
+            dados.append(ctt_formulario)
+
+            with open('contatos-formulario.json', 'w') as arquivo:
+                json.dump(dados, arquivo, indent=4)
+
         print(f'\nOlá {nome.capitalize()}, cadastro realizado com sucesso!\n')
 
     else:
