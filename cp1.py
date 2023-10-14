@@ -8,7 +8,7 @@ def menu_principal():
         print(' [2] Sobre CRM')
         print(' [3] Produtos Oferecidos')
         print(' [4] Assine a Newsletter')
-        print(' [5] Entre em Contato')
+        print(' [5] Formulário de Contato')
         print(' [0] Sair do Site')
         print('========================')
 
@@ -110,7 +110,7 @@ def sobre_crm():
 
 def sobre_produtos():
     while True:
-        print('\n>>>>> SOBRE PRODUTOS <<<<')
+        print('\n>>>>> PRODUTOS OFERECIDOS <<<<')
         print('A Salesforce oferece uma ampla gama de serviços e produtos que ajudam as empresas a aprimorar'
               '\no relacionamento com os clientes, automatizar processos de negócios e tomar decisões baseadas'
               '\nem dados. Alguns dos principais serviços e produtos oferecidos pela Salesforce incluem: ')
@@ -239,7 +239,7 @@ def validar_telefone(telefone):
 
 def assinar_newsletter():
     print('\n>>>>> ASSINE A NEWSLETTER <<<<<')
-    print('Inscreva-se na nossa newsletter para receber conteúdos exclusivos da Salesforce')
+    print('Inscreva-se na nossa newsletter para receber conteúdos exclusivos da Salesforce.')
 
     nome = input('Digite seu nome: ')
     email = input('Digite seu e-mail: ')
@@ -268,12 +268,14 @@ def cadastro_contato():
     email = input('Digite seu e-mail: ')
     telefone = input('Digite seu telefone (somente números): ')
     empresa = input('Digite o nome da sua empresa: ')
+    mensagem = input('Digite sua mensagem: ')
 
     if validar_email(email) and validar_nome(nome) and validar_telefone(telefone):
         with open('contatos-formulario.json', 'r') as arquivo:
             dados = json.load(arquivo)
 
-            ctt_formulario = {"nome": nome, "email": email, 'telefone': telefone, 'empresa': empresa}
+            ctt_formulario = {"nome": nome, "email": email, 'telefone': telefone, 'empresa': empresa,
+                              'mensagem': mensagem}
             dados.append(ctt_formulario)
 
             with open('contatos-formulario.json', 'w') as arquivo:
