@@ -3,14 +3,14 @@ import json
 
 def menu_principal():
     while True:
-        print('====== SALESFORCE ======')
+        print('======= SALESFORCE =======')
         print(' [1] Sobre a Salesforce')
         print(' [2] Sobre CRM')
         print(' [3] Produtos Oferecidos')
         print(' [4] Assine a Newsletter')
         print(' [5] Formulário de Contato')
         print(' [0] Sair do Site')
-        print('========================')
+        print('==========================')
 
         op = input(' Digite uma opção: ')
 
@@ -81,7 +81,7 @@ def sobre_crm():
         print(' [0] Voltar ao menu principal')
         print('------------------------------')
 
-        op = input('Digite uma opção: ')
+        op = input(' Digite uma opção: ')
 
         if op == '1':
             print('\n>>>>> O que é CRM? <<<<<')
@@ -105,7 +105,7 @@ def sobre_crm():
         elif op == '0':
             break
         else:
-            print('Opção inválida, digite novamente.')
+            print(' Opção inválida, digite novamente.')
 
 
 def sobre_produtos():
@@ -121,7 +121,7 @@ def sobre_produtos():
         print(' [0] Voltar ao menu principal')
         print('------------------------------')
 
-        op = input('Digite uma opção: ')
+        op = input(' Digite uma opção: ')
 
         if op == '1':
             produto_especifico()
@@ -129,7 +129,7 @@ def sobre_produtos():
         elif op == '0':
             break
         else:
-            print('Opção inválida, digite novamente.')
+            print(' Opção inválida, digite novamente.')
 
 
 def produto_especifico():
@@ -149,8 +149,8 @@ def produto_especifico():
         print(' 11. MuleSoft')
         print(' 12. Heroku')
         print('------------------------------')
-        print('Sobre qual produto você gostaria de saber mais?')
-        op = input('Digite uma opção ou \'0\' para retornar ao menu anterior: ')
+        print(' Sobre qual produto você gostaria de saber mais?')
+        op = input(' Digite uma opção ou \'0\' para retornar ao menu anterior: ')
 
         if op == '1':
             print('\n>>>>> Produto - Salescloud <<<<<')
@@ -213,7 +213,7 @@ def produto_especifico():
         elif op == '0':
             break
         else:
-            print('Opção inválida, digite novamente.')
+            print(' Opção inválida, digite novamente.')
 
 
 def validar_email(email):
@@ -257,7 +257,7 @@ def assinar_newsletter():
         print(f'\nOlá {nome.capitalize()}, a newsletter será enviada com sucesso para o e-mail {email.lower()}\n')
 
     else:
-        print('\nOs dados fornecidos não são válidos, verifique novamente.\n')
+        print('\n Os dados fornecidos não são válidos, verifique novamente.\n')
 
 
 def cadastro_contato():
@@ -284,7 +284,7 @@ def cadastro_contato():
         print(f'\nOlá {nome.capitalize()}, cadastro realizado com sucesso!\n')
 
     else:
-        print('\nDados inválidos, verifique novamente.\n')
+        print('\n Dados inválidos, verifique novamente.\n')
 
 
 # executar o programa
