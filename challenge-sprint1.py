@@ -257,7 +257,7 @@ def assinar_newsletter():
         print(f'\nOlá {nome.capitalize()}, a newsletter será enviada com sucesso para o e-mail {email.lower()}\n')
 
     else:
-        print('\nO e-mail fornecido não é válido, verifique novamente.\n')
+        print('\nOs dados fornecidos não são válidos, verifique novamente.\n')
 
 
 def cadastro_contato():
