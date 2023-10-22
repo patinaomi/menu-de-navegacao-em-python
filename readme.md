@@ -5,11 +5,13 @@ Este é um projeto de uma implementação de um menu de seleção em Python. O m
 
 ## Índice
  * [Descrição](#descrição)
+ * [Vídeo](#vídeo)
  * [Funcionalidades](#funcionalidades)
  * [Funções](#funções)
- *  [Pilares do Pensamento Computacional](#pilares-do-pensamento-computacional)
+ * [Pilares do Pensamento Computacional](#pilares-do-pensamento-computacional)
 
-
+## Vídeo
+Vídeo da explicação do projeto e o código em execução: [Link no youtube](https://www.youtube.com/watch?v=wS5WSZMN7d8&ab_channel=BrunoCarrilo)
 
 
 ## Funcionalidades:
