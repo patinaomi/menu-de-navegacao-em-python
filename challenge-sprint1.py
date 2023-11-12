@@ -1,12 +1,6 @@
 import json
 import re
 
-# Cores ANSI
-cor_vermelha = '\033[91m'
-cor_verde = '\033[92m'
-reset_cor = '\033[0m'
-
-
 def menu_principal():
     while True:
         print('======= SALESFORCE =======')
@@ -34,7 +28,7 @@ def menu_principal():
             print('\n Obrigado por visitar nosso site!')
             break
         else:
-            print(f'{cor_vermelha}Opção inválida, digite novamente.{reset_cor}')
+            print(' Opção inválida, digite novamente.\n')
 
 
 def sobre_salesforce():
@@ -241,6 +235,7 @@ def validar_nome(nome):
 
 
 def validar_telefone(telefone):
+    # aqui vai adicionar somente os números sem os caracteres!
     telefone_limpo = ''.join(filter(str.isdigit, telefone))
     if telefone_limpo.isdigit() and len(telefone_limpo) in (10, 11):
         return True
