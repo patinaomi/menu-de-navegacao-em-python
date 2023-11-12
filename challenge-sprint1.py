@@ -251,14 +251,14 @@ def assinar_newsletter():
     while True:
         nome = input('Digite seu nome: ')
         if nome == '0':
-            menu_principal()
+            return
         elif validar_nome(nome):
             break
 
     while True:
         email = input('Digite seu e-mail: ')
         if email == '0':
-            menu_principal()
+            return
         if validar_email(email):
             break
 
@@ -281,21 +281,21 @@ def cadastro_contato():
     while True:
         nome = input('Digite seu nome: ')
         if nome == '0':
-            menu_principal()
+            return
         elif validar_nome(nome):
             break
 
     while True:
         email = input('Digite seu e-mail: ')
         if email == '0':
-            menu_principal()
+            return
         elif validar_email(email):
             break
 
     while True:
         telefone = input('Digite seu telefone: ')
         if telefone == '0':
-            menu_principal()
+            return
         if validar_telefone(telefone):
             # armazena o número de telefone sem nenhum caracter
             telefone = ''.join(filter(str.isdigit, telefone))
