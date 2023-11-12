@@ -11,7 +11,7 @@ Este é um projeto de uma implementação de um menu de seleção em Python. O m
  * [Pilares do Pensamento Computacional](#pilares-do-pensamento-computacional)
 
 ## Vídeo
-Vídeo da explicação do projeto e o código em execução: [Link no youtube](https://www.youtube.com/watch?v=wS5WSZMN7d8&ab_channel=BrunoCarrilo)
+Vídeo da explicação do projeto da Sprint 1 e o código em execução: [Link no youtube](https://www.youtube.com/watch?v=wS5WSZMN7d8&ab_channel=BrunoCarrilo)
 
 
 ## Funcionalidades:
@@ -42,10 +42,10 @@ A função oferece uma visão geral dos produtos da Salesforce. O usuário pode 
 A função lista os produtos da Salesforce. Se o usuário quiser informações detalhadas sobre um produto específico, pode selecionar a opção desejada na lista. Para retornar ao menu principal, basta digitar "0". Qualquer escolha inválida resultará em uma mensagem de erro.
 
 - **validar_email(email)**
-Essa função recebe como parâmetro um endereço de e-mail digitado pelo usuário. Para validação, o e-mail deve conter um "@" e pelo menos um ".". Se a validação for bem-sucedida, a função retorna `True`; caso contrário, retorna `False`.
+Essa função recebe como parâmetro um endereço de e-mail digitado pelo usuário. Para validação, é utilizado uma expressão regular (regex) como critério. Se a validação for bem-sucedida, a função retorna `True`; caso contrário, retorna `False`.
 
 - **validar_nome(nome)**
-Essa função recebe um nome fornecido pelo usuário como parâmetro. Para validar, o nome deve consistir apenas de letras ou conter um único espaço em branco. Se a validação for bem-sucedida, a função retorna `True`; caso contrário, retorna `False`.
+Essa função recebe um nome fornecido pelo usuário como parâmetro. Para validar, é usado uma expressão regular (regex) para assegurar que o nome irá consistir apenas de letras. Se a validação for bem-sucedida, a função retorna `True`; caso contrário, retorna `False`.
 
 - **validar_telefone(telefone)**
 Essa função aceita um número de telefone fornecido pelo usuário como parâmetro. Para validar, o número de telefone deve consistir apenas de dígitos e ter um comprimento de até 10 ou 11 caracteres. Se a validação for bem-sucedida, a função retorna `True`; caso contrário, retorna `False`.
