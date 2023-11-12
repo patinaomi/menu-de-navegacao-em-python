@@ -6,6 +6,7 @@ cor_vermelha = '\033[91m'
 cor_verde = '\033[92m'
 reset_cor = '\033[0m'
 
+
 def menu_principal():
     while True:
         print('======= SALESFORCE =======')
