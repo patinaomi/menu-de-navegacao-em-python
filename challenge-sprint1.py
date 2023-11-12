@@ -1,4 +1,5 @@
 import json
+import re
 
 
 def menu_principal():
@@ -217,23 +218,29 @@ def produto_especifico():
 
 
 def validar_email(email):
-    if "@" in email and "." in email:
+    regex_email = r'^[\w\.-]+@[\w\.-]+\.\w+'
+    if re.match(regex_email, email):
         return True
     else:
+        print('Email inválido, digite novamente ou \'0\' para retornar ao menu anterior. ')
         return False
 
 
 def validar_nome(nome):
-    if nome.isalpha() or " " in nome:
+    regex_nome = r'^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$'
+    if re.match(regex_nome, nome):
         return True
     else:
+        print('Nome inválido, digite novamente ou \'0\' para retornar ao menu anterior. ')
         return False
 
 
 def validar_telefone(telefone):
-    if telefone.isdigit() and len(telefone) in (10, 11):
+    telefone_limpo = ''.join(filter(str.isdigit, telefone))
+    if telefone_limpo.isdigit() and len(telefone_limpo) in (10, 11):
         return True
     else:
+        print('Telefone inválido, digite novamente ou \'0\' para retornar ao menu anterior. ')
         return False
 
 
@@ -241,50 +248,73 @@ def assinar_newsletter():
     print('\n>>>>> ASSINE A NEWSLETTER <<<<<')
     print('Inscreva-se na nossa newsletter para receber conteúdos exclusivos da Salesforce.')
 
-    nome = input('Digite seu nome: ')
-    email = input('Digite seu e-mail: ')
+    while True:
+        nome = input('Digite seu nome: ')
+        if nome == '0':
+            menu_principal()
+        elif validar_nome(nome):
+            break
 
-    if validar_email(email) and validar_nome(nome):
-        with open('contatos-newsletter.json', 'r') as arquivo:
-            dados = json.load(arquivo)
+    while True:
+        email = input('Digite seu e-mail: ')
+        if email == '0':
+            menu_principal()
+        if validar_email(email):
+            break
 
-            ctt_newsletter = {'nome': nome, 'email': email}
-            dados.append(ctt_newsletter)
+    with open('contatos-newsletter.json', 'r') as arquivo:
+        dados = json.load(arquivo)
 
-            with open('contatos-newsletter.json', 'w') as arquivo:
-                json.dump(dados, arquivo, indent=4)
+        ctt_newsletter = {'nome': nome, 'email': email}
+        dados.append(ctt_newsletter)
 
-        print(f'\nOlá {nome.capitalize()}, a newsletter será enviada com sucesso para o e-mail {email.lower()}\n')
+        with open('contatos-newsletter.json', 'w') as arquivo:
+            json.dump(dados, arquivo, indent=4)
 
-    else:
-        print('\n Os dados fornecidos não são válidos, verifique novamente.\n')
+    print(f'\nOlá {nome.capitalize()}, a newsletter será enviada com sucesso para o e-mail {email.lower()}\n')
 
 
 def cadastro_contato():
     print('\n>>>>> CONTATO <<<<<')
     print('Basta preencher o formulário e entraremos em contato o mais rápido possível!')
 
-    nome = input('Digite seu nome: ')
-    email = input('Digite seu e-mail: ')
-    telefone = input('Digite seu telefone (somente números): ')
+    while True:
+        nome = input('Digite seu nome: ')
+        if nome == '0':
+            menu_principal()
+        elif validar_nome(nome):
+            break
+
+    while True:
+        email = input('Digite seu e-mail: ')
+        if email == '0':
+            menu_principal()
+        elif validar_email(email):
+            break
+
+    while True:
+        telefone = input('Digite seu telefone: ')
+        if telefone == '0':
+            menu_principal()
+        if validar_telefone(telefone):
+            # armazena o número de telefone sem nenhum caracter
+            telefone = ''.join(filter(str.isdigit, telefone))
+            break
+
     empresa = input('Digite o nome da sua empresa: ')
     mensagem = input('Digite sua mensagem: ')
 
-    if validar_email(email) and validar_nome(nome) and validar_telefone(telefone):
-        with open('contatos-formulario.json', 'r') as arquivo:
-            dados = json.load(arquivo)
+    with open('contatos-formulario.json', 'r') as arquivo:
+        dados = json.load(arquivo)
 
-            ctt_formulario = {"nome": nome, "email": email, 'telefone': telefone, 'empresa': empresa,
-                              'mensagem': mensagem}
-            dados.append(ctt_formulario)
+        ctt_formulario = {"nome": nome, "email": email, 'telefone': telefone, 'empresa': empresa,
+                          'mensagem': mensagem}
+        dados.append(ctt_formulario)
 
-            with open('contatos-formulario.json', 'w') as arquivo:
-                json.dump(dados, arquivo, indent=4)
+        with open('contatos-formulario.json', 'w') as arquivo:
+            json.dump(dados, arquivo, indent=4)
 
-        print(f'\nOlá {nome.capitalize()}, cadastro realizado com sucesso!\n')
-
-    else:
-        print('\n Dados inválidos, verifique novamente.\n')
+    print(f'\nOlá {nome.capitalize()}, formulário enviado com sucesso!\n')
 
 
 # executar o programa
