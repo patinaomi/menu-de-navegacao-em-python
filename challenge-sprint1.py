@@ -1,6 +1,10 @@
 import json
 import re
 
+# Cores ANSI
+cor_vermelha = '\033[91m'
+cor_verde = '\033[92m'
+reset_cor = '\033[0m'
 
 def menu_principal():
     while True:
@@ -29,7 +33,7 @@ def menu_principal():
             print('\n Obrigado por visitar nosso site!')
             break
         else:
-            print(' Opção inválida, digite novamente.')
+            print(f'{cor_vermelha}Opção inválida, digite novamente.{reset_cor}')
 
 
 def sobre_salesforce():
