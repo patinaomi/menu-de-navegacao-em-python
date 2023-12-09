@@ -1,6 +1,7 @@
 import json
 import re
 
+
 def menu_principal():
     while True:
         print('======= SALESFORCE =======')
@@ -218,6 +219,7 @@ def produto_especifico():
 
 def validar_email(email):
     regex_email = r'^[\w\.-]+@[\w\.-]+\.\w+'
+
     if re.match(regex_email, email):
         return True
     else:
@@ -230,12 +232,15 @@ def validar_nome(nome):
     if re.match(regex_nome, nome):
         return True
     else:
+        # coloquei essa opção no caso do usuário desistir de preencher o formulário
         print('Nome inválido, digite novamente ou \'0\' para retornar ao menu anterior. ')
         return False
 
 
 def validar_telefone(telefone):
-    # aqui vai adicionar somente os números sem os caracteres!
+    # Remove caracteres não numéricos da string telefone usando a função filter e str.isdigit
+    # e depois o join junta os caracteres restantes de volta em uma string única.
+
     telefone_limpo = ''.join(filter(str.isdigit, telefone))
     if telefone_limpo.isdigit() and len(telefone_limpo) in (10, 11):
         return True
@@ -263,8 +268,8 @@ def assinar_newsletter():
             break
 
     with open('contatos-newsletter.json', 'r') as arquivo:
-        dados = json.load(arquivo)
 
+        dados = json.load(arquivo)
         ctt_newsletter = {'nome': nome, 'email': email}
         dados.append(ctt_newsletter)
 
@@ -314,6 +319,7 @@ def cadastro_contato():
         with open('contatos-formulario.json', 'w') as arquivo:
             json.dump(dados, arquivo, indent=4)
 
+        # primeira letra maiuscula!
     print(f'\nOlá {nome.capitalize()}, formulário enviado com sucesso!\n')
 
 
